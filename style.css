@@ -1,0 +1,109 @@
+.slide {
+    width: 33.86cm;
+    height: 19.05cm;
+    margin: auto;
+    border: 3px solid black;
+    position:relative;
+    padding: 1cm;
+    background-size: 35.86cm 21.05cm;
+}
+
+.slide h1 {
+    font-size: 35pt;
+}
+
+.container_title_slide {
+    height: 30em;
+    position: relative;
+}
+
+.container_title_slide h1 {
+    font-size: 45pt;
+    margin: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.container_title_slide h3 {
+    font-size: 20pt;
+    margin: 0;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.text_block_right {
+    display: inline-block; /*Obrazok vedla bloku textu*/
+    float: right;
+}
+
+.list h2 {
+    font-size: 20pt;
+    font-weight:normal;
+}
+
+.list h3 {
+    font-size: 18pt;
+    font-weight:normal;
+}
+
+.list h4 {
+    font-size: 16pt;
+    font-weight:normal;
+}
+
+.text_block_left {
+    display: inline-block; /*Obrazok vedla bloku textu*/
+    float: left;
+}
+
+/*Vycentrovany text pod obrazkom*/
+.text_block_under_image {
+    font-size: 16pt;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/*Vycentrovanie textu nad tabulkou*/
+.text_block_upper_table {
+    font-size: 16pt;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.center_image_in_block {
+  text-align: center;
+  padding: 70px 0; /*Centruje obrazok vertikalne*/
+}
+
+.center {
+    text-align: center;
+}
+
+.resources {
+    font-size: 16pt;
+}
+
+.page_number {
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 0.5cm;
+    margin-bottom: 0.5cm;
+    font-size: 20pt;
+}
+
+table {
+	  font-size: 16pt;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}

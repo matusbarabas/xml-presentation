@@ -1,0 +1,25 @@
+Zoznam súborov:
+- prieèinok images - obsahuje všetky pouité obrázky
+- prieèinok output - obsahuje všetky vygenerované slajdy vo fromáte XHTML
+- image.xsl - xsl pre obrázok pouité v xsl súbore transformation.xsl
+- image_fo.xsl - xsl pre obrázok pouité v xsl súbore mytrans.xsl
+- mytrans.xsl - xsl súbor pre transformáciu do formátu PDF
+- nested_list.xsl - xsl pre zoznam pouité v súbore transformation.xsl
+- nested_list_fo.xsl - xsl pre zoznam pouité v súbore mytrans.xsl
+- pdf_xep_mytrans.bat - bat súbor pre transformáciu XML do formátu PDF
+- presentation.pdf - vıstupná prezentácia vo formáte PDF
+- presentation.xml - XML prezentácia
+- relax_ng.rng - schéma pre XML prezentáciu vytvorená v jazyku RELAX NG
+- style.css - CSS súbor so štılmi pre prezentáciu
+- transformation.xsl - xsl súbor pre tranformáciu do formátu XHTML 
+
+Spôsob prekladu do formátu XHTML:
+- cez príkazovı riadok dosta sa do prieèinka projektu
+- príkazom java -jar saxon.jar -xsl:transformation.xsl -s:presentation.xml sa do prieèinka output vygenerujú XHTML slajdy
+- monos poui parametre page-number a font-type nasledovnım spôsobom: java -jar saxon.jar -xsl:transformation.xsl -s:presentation.xml page-number=false font-type=Verdana
+- keïe sa pouíva XSLT 2.0 treba poui SAXON od verzie 8.0 vyššie
+
+Spôsob prekladu do formátu PDF
+- spustenie pdf_xep_mytrans.bat súboru
+- pieèinok s projektom musí by priamo na disku C v prieèinku s názvom Z3-xbarabas
+- vygeneruje súbor presentation.pdf, v ktorom je vıstupná prezentácia

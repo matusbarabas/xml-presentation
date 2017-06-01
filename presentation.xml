@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transformation_new.xsl"?>
+<?xml-model href="relax_ng.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<presentation>
+
+  <slide type="title-slide">
+    <title>Voľne šíriteľné nástroje na rozbitie hesiel.</title>
+    <autor>Matúš Barabás</autor>
+  </slide>
+
+  <slide type="content">
+    <title>Obsah</title>
+  </slide>
+
+  <slide type="list-only">
+    <title>Úvod</title>
+    <list>
+      <item>
+        <one>Heslo – prostriedok autentifikácie používateľa</one>
+      </item>
+      <item>
+        <one>5 najpoužívanejších hesiel za rok 2016 – 123456, 123456789, qwerty, 12345678, 111111</one>
+      </item>
+      <item>
+        <one>Bezpečnosť hesla</one>
+          <two>Sila hesla</two>
+          <two>Zabezpečenie na strane používateľa</two>
+          <two>Overovanie na strane systému</two>
+      </item>
+      <item>
+        <one>Prelomenie/rozbitie hesla – proces získania hesiel z dát</one>
+          <two>Uložených na danom zariadení</two>
+          <two>Prenášaných prostredníctvom počítačových systémov</two>
+      </item>
+    </list>
+  </slide>
+
+  <slide type="list-image">
+    <title>Dictionary attack (slovníkový útok)</title>
+    <list>
+      <block_width>22</block_width>
+      <item>
+        <one>Systematické skúšanie hesiel z vopred pripraveného zoznamu – slovník</one>
+      </item>
+      <item>
+        <one>Slovník – zoznam bežných slov – často používané ako heslá</one>
+      </item>
+      <item>
+        <one>Úspešný aj pri kombináciách slov – predĺženie o niekoľko sekúnd</one>
+      </item>
+      <item>
+        <one>Neúspešný</one>
+          <two>Náhodná kombinácia čísel a veľkých a malých písmen</two>
+          <two>Obmedzený počet pokusov zadávania hesla</two>
+      </item>
+      <item>
+        <one>Rýchla metóda</one>
+      </item>
+      <item>
+        <one>Efektívnejšia ako útok hrubou silou</one>
+      </item>
+      <item>
+        <one>Nástroje - John the Ripper, L0phtCrack, Cain And Abel</one>
+      </item>
+    </list>
+    <image>
+      <block_width>11.86</block_width>
+      <src>C:/Z3-xbarabas/images/dictionary.jpg</src>
+      <align>right</align>
+      <width>400</width>
+      <height>300</height>
+    </image>
+  </slide>
+
+  <slide type="list-image">
+    <title>Phishing (krádež citlivých informácií)</title>
+    <list>
+      <block_width>22</block_width>
+      <item>
+        <one>„Password fishing“ – doslovne rybolov hesiel</one>
+      </item>
+      <item>
+        <one>Útočník – <inline type="italic">„Phisher“</inline></one>
+          <two>Neoprávneným spôsobom získava údaje priamo od používateľov</two>
+          <two>Odosiela podvodný email – oznamuje zmenu alebo obnovenie účtu</two>
+          <two>Výstražné upozornenia v prípade neposkytnutia údajov</two>
+      </item>
+      <item>
+        <one>Vytvorenie presnej kópie existujúcej dôveryhodnej stránky</one>
+      </item>
+      <item>
+        <one>Ponúkanie výhod, ak sa prihlásia cez danú stránku</one>
+      </item>
+      <item>
+        <one>Zadané prihlasovacie údaje po zadaní odoslané priamo útočníkovi</one>
+      </item>
+    </list>
+    <image>
+      <block_width>11.86</block_width>
+      <src>C:/Z3-xbarabas/images/phishing.jpg</src>
+      <align>left</align>
+      <width>400</width>
+      <height>300</height>
+    </image>
+  </slide>
+
+  <slide type="list-only">
+    <title>Malware (malvér)</title>
+    <list>
+      <item>
+        <one>Všeobecné označenie škodlivého kódu</one>
+      </item>
+      <item>
+        <one>Vírusy, trojské kone, spyware, adware</one>
+      </item>
+      <item>
+        <one>Internet – slabá ochrana zabezpečenia stránok – preniknutie do počítača</one>
+      </item>
+      <item>
+        <one>Po preniknutí do počítača malvér nainštaluje potrebný program, napr.</one>
+          <two><inline type="italic">„key logger“</inline> – zaznamenáva text písaný na klávesnici</two>
+          <two><inline type="italic">„screen scraper“</inline> – zaznamenáva obrazovku napr. v procese prihlasovania</two>
+      </item>
+      <item>
+        <one>Malvér závisí na existencii webového prehliadača</one>
+          <two>Súbor, v ktorom sú uložené heslá používateľa</two>
+      </item>
+      <item>
+        <one>Používateľ nemá ani potuchy, že sa niečo deje</one>
+      </item>
+    </list>
+  </slide>
+
+  <slide type="image-only">
+    <title>Rozdelenie malvéru</title>
+    <image>
+      <src>C:/Z3-xbarabas/images/malware.jpg</src>
+      <align>center</align>
+      <width>1000</width>
+      <height>500</height>
+    </image>
+    <popis>Obr.: Toto sú typy existujúceho malvéru.</popis>
+  </slide>
+
+  <slide type="comparison">
+    <title>Rainbow table attack vs. Brute force attack</title>
+    <list align="left">
+      <item>
+        <one>Útok dúhovou tabuľkou</one>
+      </item>
+      <item>
+        <one>Predvýpočítaná metóda – dúhova tabuľka obsahuje predvýpočítané hodnoty</one>
+      </item>
+      <item>
+        <one>Vypočítava haš pre slová v slovníku – ukladá ho do dúhovej tabuľky</one>
+          <two>Porovnáva ho s hašom v dúhovej tabuľke – zhoda – heslo je prelomené</two>
+      </item>
+      <item>
+        <one>Efektívnosť a časová náročnosť – závisí na veľkosti tabuľky a počte pozretí do nej</one>
+      </item>
+      <item>
+        <one>OphCrack, RainbowCrack a iné</one>
+      </item>
+    </list>
+    <list align="right">
+      <item>
+        <one>Útok hrubou silou</one>
+      </item>
+      <item>
+        <one>Prelomenie hesla bez znalosti kľúča</one>
+      </item>
+      <item>
+        <one>Systematické skúšanie všetkých možných kombinácií malých, veľkých písmen a čísel</one>
+      </item>
+      <item>
+        <one>Efektivita – závisí na dĺžke hesla</one>
+          <two>Do 6 znakov – efektívnejšia než slovníkový útok</two>
+          <two>Nad 6 znakov – rapídny pokles efektivity, nárast časovej náročnosti</two>
+      </item>
+      <item>
+        <one>Čas – exponenciálne rastie s dĺžkou hesla</one>
+      </item>
+      <item>
+        <one>John the Ripper</one>
+      </item>
+    </list>
+  </slide>
+
+  <slide type="table-only">
+    <title>Primitívnejšie metódy prelomenia hesiel</title>
+    <popis>Tab.: Tabuľka metód</popis>
+    <table>
+
+      <table_header>
+        <title>Social engineering</title>
+        <title>Offline cracking</title>
+        <title>Shoulder surfing</title>
+        <title>Guess (hádanie)</title>
+      </table_header>
+
+      <row>
+        <first_column>Manipulácia ľudí s cieľom získať citlivé informácie</first_column>
+        <second_column>„Offline attack“ – útok uskutočňovaný bez prístupu na internet</second_column>
+        <third_column>Primitívnejšia metóda – aj tak môže priniesť mieru úspechu</third_column>
+        <fourth_column>Najlepší priateľ hackera – predvídateľnosť</fourth_column>
+      </row>
+      <row>
+        <first_column>Útočník neprichádza do osobného kontaktu s používateľom</first_column>
+        <second_column>Závisí na prístupe k súboru – obsahuje haše hesiel</second_column>
+        <third_column>Útočník – človek vydávajúci sa za kuriéra, servisného technika atď., aby získal prístup do budovy</third_column>
+        <fourth_column>Generovanie hesiel</fourth_column>
+      </row>
+      <row>
+        <first_column>Podvodný telefonát</first_column>
+        <second_column>Priamo v systéme používateľa</second_column>
+        <third_column>Člen firmy – dostáva od ostatných zamestnancov určitý druh voľného priechodu</third_column>
+        <fourth_column>Sledovanie a podrobná analýza používateľa</fourth_column>
+      </row>
+      <row>
+        <first_column>Útočník sa vydáva za IT bezpečnostného technika alebo inú zodpovednú osobu</first_column>
+        <second_column>V systéme, na ktorý má daný používateľ lokálny prístup</second_column>
+        <third_column>Zapisuje si poznámky nalepené na monitoroch zamestnancov</third_column>
+        <fourth_column>Útočník získa malý počet často úspešných potencionálnych hesiel</fourth_column>
+      </row>
+      <row>
+        <first_column>Vopred zistená pravdivá informácia (dátum narodenia, meno nadriadeného)</first_column>
+        <second_column>Jediná vec, ktorá mu môže zabrániť – limit daného hardvéru</second_column>
+        <third_column>Sleduje zamestnanca pri zadávaní prihlasovacích údajov</third_column>
+        <fourth_column>Útočník sám skúša pár pokusov o prihlásenie</fourth_column>
+      </row>
+      <row>
+        <first_column>Na základe informácií žiada citlivé údaje</first_column>
+        <second_column>Čím výkonnejší procesor – útočník môže vykonávať viac pokusov za sekundu</second_column>
+        <third_column>Dnešná moderná doba – skryté miniatúrne kamery a mikrofóny</third_column>
+        <fourth_column>Dostatočne podrobná a prepracovaná analýza – prelomenie hesla</fourth_column>
+      </row>
+
+
+    </table>
+  </slide>
+
+  <slide type="list-only">
+    <title>Zabezpečenie hesiel</title>
+    <list>
+      <item>
+        <one>Pre každý z dôležitých účtov používať jedinečné heslá</one>
+      </item>
+      <item>
+        <one>Zapisovanie hesla – uchovať na tajnom neviditeľnom mieste</one>
+      </item>
+      <item>
+        <one>Sila hesla závisí na </one>
+          <two><inline type="bold">Dĺžke</inline> – dlhé hesla sú ťažšie prelomiteľné</two>
+          <two><inline type="bold">Zloženie</inline> – veľké a malé písmená, čísla a symboly</two>
+      </item>
+      <item>
+        <one>Odborníci radia – určiť nejakú bežnú frázu – vziať začiatočné písmená – vytvorenie hesla</one>
+      </item>
+      <item>
+        <one>Nastavenie rôznych možností hesla – pri obnove stále aktuálny mail ...</one>
+      </item>
+      <item>
+        <one>Pravidelná aktualizácia hesiel</one>
+      </item>
+    </list>
+  </slide>
+
+  <slide type="resources">
+    <title>Zdroje</title>
+    <resource type="web">
+      <author>
+        <name>Rohan</name>
+        <surname>Hande</surname>
+      </author>
+      <year>2012</year>
+      <website_name>Password Cracking – Part 4 – Online vs. Offline Password Cracking</website_name>
+      <url>http://rohanhande.blogspot.sk/2012/03/password-cracking-part-4-online-vs.html</url>
+    </resource>
+
+    <resource type="web">
+      <author>
+        <name>Vladimír</name>
+        <surname>Jančích</surname>
+      </author>
+      <year>2017</year>
+      <website_name>Zase tie isté chyby. Toto sú najpoužívanejšie heslá v roku 2016</website_name>
+      <url>http://www.zive.sk/clanok/122375/zase-tie-iste-chyby-toto-su-najpouzivanejsie-hesla-v-roku-2016</url>
+    </resource>
+
+    <resource type="web">
+      <author>
+        <name>Margaret</name>
+        <surname>Rouse</surname>
+      </author>
+      <year>2005</year>
+      <website_name>Dictionary attack</website_name>
+      <url>http://searchsecurity.techtarget.com/definition/dictionary-attack </url>
+    </resource>
+
+    <resource type="web">
+      <author>
+        <name>Margaret</name>
+        <surname>Rouse</surname>
+      </author>
+      <year>2017</year>
+      <website_name>Password</website_name>
+      <url>http://searchsecurity.techtarget.com/definition/password</url>
+    </resource>
+
+    <resource type="web">
+      <author>
+        <name>Lenka</name>
+        <surname>Šenkýrová</surname>
+      </author>
+      <year>2013</year>
+      <website_name>Čo je PHISHING alebo ako sa nestať obeťou podvodníkov</website_name>
+      <url>https://www.slsp.sk/sk/otazky-a-odpovede/co-je-phishing</url>
+    </resource>
+
+    <resource type="web">
+      <author>
+        <name>Davey</name>
+        <surname>Winder</surname>
+      </author>
+      <year>2011</year>
+      <website_name>Top ten password cracking techniques</website_name>
+      <url>http://www.alphr.com/features/371158/top-ten-password-cracking-techniques</url>
+    </resource>
+
+    <!-- <resource type="journal">
+      <author>
+        <name>Janko</name>
+        <surname>Hrasko</surname>
+      </author>
+      <author>
+        <name>Hraska</name>
+        <surname>Jankova</surname>
+      </author>
+      <year>2017</year>
+      <title>O Jankovi a Marienke</title>
+      <journal>Toto je nazov zurnalu</journal>
+      <volume>10</volume>
+      <issue>15</issue>
+      <pages_used>36-40</pages_used>
+    </resource>
+
+    <resource type="book">
+      <author>
+        <name>Janko</name>
+        <surname>Hrasko</surname>
+      </author>
+      <author>
+        <name>Hraska</name>
+        <surname>Jankova</surname>
+      </author>
+      <year>2017</year>
+      <title>O Jankovi a Marienke</title>
+      <city>Bratislava</city>
+      <pages_used>36-40</pages_used>
+    </resource> -->
+  </slide>
+</presentation>

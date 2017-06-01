@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style>
+            .slide {
+    width: 33.86cm;
+    height: 19.05cm;
+    margin: auto;
+    border: 3px solid black;
+    position:relative;
+    padding: 1cm;
+    background-size: 35.86cm 21.05cm;
+}
+
+.slide h1 {
+    font-size: 35pt;
+}
+
+.container_title_slide {
+    height: 30em;
+    position: relative;
+}
+
+.container_title_slide h1 {
+    font-size: 45pt;
+    margin: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.container_title_slide h3 {
+    font-size: 20pt;
+    margin: 0;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.text_block_right {
+    display: inline-block; /*Obrazok vedla bloku textu*/
+    float: right;
+}
+
+.list h2 {
+    font-size: 20pt;
+    font-weight:normal;
+}
+
+.list h3 {
+    font-size: 18pt;
+    font-weight:normal;
+}
+
+.list h4 {
+    font-size: 16pt;
+    font-weight:normal;
+}
+
+.text_block_left {
+    display: inline-block; /*Obrazok vedla bloku textu*/
+    float: left;
+}
+
+/*Vycentrovany text pod obrazkom*/
+.text_block_under_image {
+    font-size: 16pt;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/*Vycentrovanie textu nad tabulkou*/
+.text_block_upper_table {
+    font-size: 16pt;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.center_image_in_block {
+  text-align: center;
+  padding: 70px 0; /*Centruje obrazok vertikalne*/
+}
+
+.center {
+    text-align: center;
+}
+
+.resources {
+    font-size: 16pt;
+}
+
+.page_number {
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 0.5cm;
+    margin-bottom: 0.5cm;
+    font-size: 20pt;
+}
+
+table {
+	  font-size: 16pt;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+          </style></head>
+   <body>
+      <div class="slide" style="font-family: Thimes New Roman">
+         <div class="page_number">8</div>
+         <h1>Rainbow table attack vs. Brute force attack</h1>
+         <div class="text_block_left" style="width: 16.93cm">
+            <div class="list">
+               <ul>
+                  <li>
+                     <h2>Útok dúhovou tabuľkou</h2>
+                     <ul></ul>
+                  </li>
+               </ul>
+            </div>
+            <div class="list">
+               <ul>
+                  <li>
+                     <h2>Predvýpočítaná metóda – dúhova tabuľka obsahuje predvýpočítané hodnoty</h2>
+                     <ul></ul>
+                  </li>
+               </ul>
+            </div>
+            <div class="list">
+               <ul>
+                  <li>
+                     <h2>Vypočítava haš pre slová v slovníku – ukladá ho do dúhovej tabuľky</h2>
+                     <ul>
+                        <li>
+                           <h3>Porovnáva ho s hašom v dúhovej tabuľke – zhoda – heslo je prelomené</h3>
+                           <ul></ul>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+            <div class="list">
+               <ul>
+                  <li>
+                     <h2>Efektívnosť a časová náročnosť – závisí na veľkosti tabuľky a počte pozretí do nej</h2>
+                     <ul></ul>
+                  </li>
+               </ul>
+            </div>
+            <div class="list">
+               <ul>
+                  <li>
+                     <h2>OphCrack, RainbowCrack a iné</h2>
+                     <ul></ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="text_block_right" style="width: 16.93cm">
+            <div class="list">
+               <ul>
+                  <li>
+                     <h2>Útok hrubou silou</h2>
+                     <ul></ul>
+                  </li>
+               </ul>
+            </div>
+            <div class="list">
+               <ul>
+                  <li>
+                     <h2>Prelomenie hesla bez znalosti kľúča</h2>
+                     <ul></ul>
+                  </li>
+               </ul>
+            </div>
+            <div class="list">
+               <ul>
+                  <li>
+                     <h2>Systematické skúšanie všetkých možných kombinácií malých, veľkých písmen a čísel</h2>
+                     <ul></ul>
+                  </li>
+               </ul>
+            </div>
+            <div class="list">
+               <ul>
+                  <li>
+                     <h2>Efektivita – závisí na dĺžke hesla</h2>
+                     <ul>
+                        <li>
+                           <h3>Do 6 znakov – efektívnejšia než slovníkový útok</h3>
+                           <ul></ul>
+                        </li>
+                        <li>
+                           <h3>Nad 6 znakov – rapídny pokles efektivity, nárast časovej náročnosti</h3>
+                           <ul></ul>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+            <div class="list">
+               <ul>
+                  <li>
+                     <h2>Čas – exponenciálne rastie s dĺžkou hesla</h2>
+                     <ul></ul>
+                  </li>
+               </ul>
+            </div>
+            <div class="list">
+               <ul>
+                  <li>
+                     <h2>John the Ripper</h2>
+                     <ul></ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

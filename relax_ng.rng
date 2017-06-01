@@ -1,0 +1,294 @@
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="presentation">
+      <oneOrMore>
+        <element name="slide">
+          <element name="title">
+            <text/>
+          </element>
+          <choice>
+
+            <group>
+              <attribute name="type">
+                <value>title-slide</value>
+              </attribute>
+              <element name="autor">
+                <text/>
+              </element>
+            </group>
+
+            <group>
+              <attribute name="type">
+                <value>content</value>
+              </attribute>
+            </group>
+
+            <group>
+              <attribute name="type">
+                <value>list-only</value>
+              </attribute>
+              <ref name="list"/>
+            </group>
+
+            <group>
+              <attribute name="type">
+                <value>list-image</value>
+              </attribute>
+              <ref name="list"/>
+              <ref name="image"/>
+            </group>
+
+            <group>
+              <attribute name="type">
+                <value>comparison</value>
+              </attribute>
+              <ref name="list"/>
+              <ref name="list"/>
+            </group>
+
+            <group>
+              <attribute name="type">
+                <value>table-only</value>
+              </attribute>
+              <element name="popis">
+                <text/>
+              </element>
+              <element name="table">
+                <element name="table_header">
+                    <element name="title">
+                      <text/>
+                    </element>
+                    <element name="title">
+                      <text/>
+                    </element>
+                    <element name="title">
+                      <text/>
+                    </element>
+                    <element name="title">
+                      <text/>
+                    </element>
+                  </element>
+                <oneOrMore>
+                  <element name="row">
+                    <element name="first_column">
+                      <text/>
+                    </element>
+                    <element name="second_column">
+                      <text/>
+                    </element>
+                    <element name="third_column">
+                      <text/>
+                    </element>
+                    <element name="fourth_column">
+                      <text/>
+                    </element>
+                  </element>
+                </oneOrMore>
+              </element>
+            </group>
+
+            <group>
+              <attribute name="type">
+                <value>image-only</value>
+              </attribute>
+              <ref name="image"/>
+              <element name="popis">
+                <text/>
+              </element>
+            </group>
+
+            <group>
+              <attribute name="type">
+                <value>resources</value>
+              </attribute>
+              <oneOrMore>
+                <element name="resource">
+                  <choice>
+
+                    <group>
+                      <attribute name="type">
+                        <value>web</value>
+                      </attribute>
+                      <oneOrMore>
+                        <element name="author">
+                          <element name="name">
+                            <text/>
+                          </element>
+                          <element name="surname">
+                            <text/>
+                          </element>
+                        </element>
+                      </oneOrMore>
+                      <element name="year">
+                        <data type="gYear"/>
+                      </element>
+                      <element name="website_name">
+                        <text/>
+                      </element>
+                      <element name="url">
+                        <text/>
+                      </element>
+                    </group>
+
+                    <group>
+                      <attribute name="type">
+                        <value>journal</value>
+                      </attribute>
+                      <oneOrMore>
+                        <element name="author">
+                          <element name="name">
+                            <text/>
+                          </element>
+                          <element name="surname">
+                            <text/>
+                          </element>
+                        </element>
+                      </oneOrMore>
+                      <element name="year">
+                        <data type="gYear"/>
+                      </element>
+                      <element name="title">
+                        <text/>
+                      </element>
+                      <element name="journal">
+                        <text/>
+                      </element>
+                      <element name="volume">
+                        <data type="integer"/>
+                      </element>
+                      <element name="issue">
+                        <data type="integer"/>
+                      </element>
+                      <element name="pages_used">
+                        <text/>
+                      </element>
+                    </group>
+
+                    <group>
+                      <attribute name="type">
+                        <value>book</value>
+                      </attribute>
+                      <oneOrMore>
+                        <element name="author">
+                          <element name="name">
+                            <text/>
+                          </element>
+                          <element name="surname">
+                            <text/>
+                          </element>
+                        </element>
+                      </oneOrMore>
+                      <element name="year">
+                        <data type="gYear"/>
+                      </element>
+                      <element name="title">
+                        <text/>
+                      </element>
+                      <element name="city">
+                        <text/>
+                      </element>
+                      <element name="pages_used">
+                        <text/>
+                      </element>
+                    </group>
+
+                  </choice>
+                </element>
+              </oneOrMore>
+            </group>
+
+          </choice>
+        </element>
+      </oneOrMore>
+    </element>
+  </start>
+  
+  <define name="inline">
+    <zeroOrMore>
+      <element name="inline">
+          <attribute name="type">
+            <value>italic</value>
+          </attribute>
+          <text/>
+      </element>
+    </zeroOrMore>
+    <zeroOrMore>
+      <element name="inline">
+          <attribute name="type">
+            <value>bold</value>
+          </attribute>
+          <text/>
+      </element>
+    </zeroOrMore>
+    <zeroOrMore>
+      <element name="inline">
+          <attribute name="type">
+            <value>underline</value>
+          </attribute>
+          <text/>
+      </element>
+    </zeroOrMore>
+  </define>
+
+  <define name="list">
+    <element name="list">
+      <optional>
+        <attribute name="align">
+          <data type="string"/>
+        </attribute>
+      </optional>
+      <optional>
+        <element name="block_width">
+            <text/>
+        </element>
+      </optional>
+      <oneOrMore>
+        <element name="item">
+          <element name="one">
+            <text/>
+            <ref name="inline"/>
+            <text/>
+          </element>
+          <zeroOrMore>
+            <element name="two">
+              <text/>
+              <ref name="inline"/>
+              <text/>
+            </element>
+          </zeroOrMore>
+          <zeroOrMore>
+            <element name="three">
+              <text/>
+              <ref name="inline"/>
+              <text/>
+            </element>
+          </zeroOrMore>
+        </element>
+      </oneOrMore>
+    </element>
+  </define>
+
+  <define name="image">
+    <element name="image">
+      <optional>
+        <element name="block_width">
+            <text/>
+        </element>
+      </optional>
+      <element name="src">
+        <text/>
+      </element>
+      <element name="align">
+        <text/>
+      </element>
+      <element name="width">
+        <data type="positiveInteger"/>
+      </element>
+      <element name="height">
+        <data type="positiveInteger"/>
+      </element>
+    </element>
+  </define>
+  
+</grammar>

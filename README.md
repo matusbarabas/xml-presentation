@@ -58,6 +58,7 @@ Za pomoci jazyka XML som vytvoril prezentáciu reprezentujúcu niekoľko typov s
 * súbor automaticky generuje obsah s reálnymi klikateľnými odkazmi na jednotlivé slajdy
 * nasledujú rovnaké templaty ako pri predošlom XSL súbore
 * namiesto html tagov a css štýlu sú využívané ```fo``` objekty a ich vlastnosti
-* transformáciu do formátu PDF zabezpečuje **pdf_xep_mytrans.bat** bat súbor, rovnaký ako pri generovaní dokumentu v Docbooku
+* transformáciu do formátu PDF zabezpečuje **pdf_xep_mytrans.bat** bat súbor
+* pri tranformácii je potrebné mať naištalovaný Docbook, ktorý musí byť umiestnený priamo na disku C resp. ak nie je, je potrebné zmeniť cesty v bat súbore
 
 ---
